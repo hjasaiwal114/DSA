@@ -1,0 +1,17 @@
+
+class Solution:
+    def lcmAndGcd(self, A , B):
+        # code here 
+        def Gcd(A,B):
+            (m,n)=(max(A,B),min(A,B))
+            if(m%n==0):
+                return(n)
+            else:
+                return(Gcd(B,A%B))
+        
+        def lcm(A,B):
+            return(A*B//Gcd(A,B))
+                    
+        return(lcm(A,B),Gcd(A,B))
+
+

@@ -1,0 +1,21 @@
+def evenlyDivides (self, N):
+        count = 0
+        for i in str(N):
+            if int(i)!=0 and N%int(i)==0:
+                count+=1
+        return count
+"""int ko str m convert karke loop chla sakte h or split vgera nhi krna hota h"""
+
+# gfg
+def evenlyDivides (self, N):
+        temp = N
+        count = 0
+        while (temp != 0):
+            # extract the last digit
+            d = temp % 10
+            temp = temp//10
+            # check if d divides N evenly
+            if d > 0 and N%d == 0:
+              count+=1;
+        
+        return count;

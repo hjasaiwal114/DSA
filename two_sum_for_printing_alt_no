@@ -1,0 +1,16 @@
+#User function Template for python3
+
+# arr is the array
+# n is the number of elements in array
+def printAl(arr,n):
+    # your code here
+    
+    for i in range(0,n,2):
+        print(arr[i], end = " ")
+        
+
+# isme i +=2 bi tha lakin vo kuch extra kar nhi rha tha arr[i] isme shyad kuch hisab hota hoga to vo agge pta lagna h ki array m ye ye phele se hi feed tha ki ni 
+    
+    
+       
+        

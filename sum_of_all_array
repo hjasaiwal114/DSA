@@ -1,0 +1,12 @@
+class Solution:
+
+	def _sum(self,arr, n):
+	    sum = 0
+	    for i in arr:
+	        sum += i
+	    
+	    return sum     
+	        
+   		# code here
+   		'''arr m agr loop chlayenge tab vo value  dedega bro ya arr[i] se '''
+
