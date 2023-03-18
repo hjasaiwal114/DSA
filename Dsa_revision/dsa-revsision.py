@@ -6,6 +6,9 @@ class MeraList:
         # create a C type array with size = self.size
         self.A = self._make_array(self.size)
 
+    def __len__(self):
+        return size.n
+        
     def __make_array(self, capacity):
         # creates a C type array (static,  refrencetial) ith size capacity
         return (capacity*ctypes.py_object)()
