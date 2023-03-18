@@ -1,38 +1,52 @@
+import ctypes
+
 class MeraList:
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.size = 1
         self.n  = 0
         # create a C type array with size = self.size
         self.A = self._make_array(self.size)
 
-def __len__(self):
+def __len__(self) -> int:
     return self.n
 
-def __str__(self):
+def __str__(self) -> str:
     # [1,2,3]
     result = ''
     for i in range(self.n):
         result = result + str(self.A[i]) + ','
 
     return '[' + result[:-1] +']'
+ """
+ you can do this also
+ return f"[{', '.join(str(self.A[i]) for i in range(self.n))}]"
+ """
 
 def __getitem(self,index):
     if 0 <= index< self.n:
         return self.A[index]
     else:
         return 'IndexError -  Index out of range'
+    """
+    #another way
+    if not 0 <= index< self.n:
+        raise IndexError("Index out of range")
+    return self.A[index]
+
+    """
     
-def __defitem__(self,pos):
+def __delitem__(self,pos : int):
     #  delete
-    if 0<= pos < self.n:
-        for i in  range(pos,self.n-1):
-            self.A[i] = self.A[i+1]
+    if not 0<= pos < self.n:
+        raise IndexError("Index out of range")
+    for i in  range(pos,self.n-1):
+        self.A[i] = self.A[i+1]
 
-        self.n = self.n - 1
+    self.n = self.n - 1
 
 
-def append(self, item):
+def append(self, item: any):
     if self.n == self.size:
         # resize
         self. __resize(self.size*2)
@@ -41,7 +55,7 @@ def append(self, item):
         self.A[self.n] = item
         self.n = self.n + 1
 
-def pop(self):
+def pop(self) -> any :
     if self.n == 0:
         return 'Empty List'
     
@@ -52,7 +66,7 @@ def clear(self):
     self.size = 1
     self.n = 0
 
-def find(self, item):
+def find(self, item: any) -> int:
     for i in range(self,item):
 
         for i in range(self.n):
