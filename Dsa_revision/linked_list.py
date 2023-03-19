@@ -64,6 +64,7 @@ def change_set(self):
             temp.data = ' '
 
             if temp.next.data == "+" or temp.next.data == '/':
-                
+                temp.next.next.data = temp.next.next.data.upper()
+                temp.next = temp.next.next
         
         temp = temp.next
