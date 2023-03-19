@@ -56,3 +56,14 @@ def insert_after(self, after ,value):
     else:
         return "Item not found"
     
+def change_set(self):
+
+    temp = self.head
+     while temp != None:
+        if temp.data == "+" or temp.data == '/':
+            temp.data = ' '
+
+            if temp.next.data == "+" or temp.next.data == '/':
+                
+        
+        temp = temp.next
