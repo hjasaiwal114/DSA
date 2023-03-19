@@ -57,3 +57,43 @@ class HashTable:
             if self.keys[i] is not None:
                 res.append(f"{self.keys[i]}: {self.values[i]}")
         return "{" + ", ".join(res) + "}"
+
+class HashTable:
+    def __init__(self, size):
+        self.size = size
+        self.table = [[] for _ in range(size)]
+
+    def _hash_function(self, key):
+        return hash(key) % self.size
+
+    def put(self, key, value):
+        hash_value = self._hash_function(key)
+        slot = self.table[hash_value]
+        for i, (k, v) in enumerate(slot):
+            if k == key:
+                slot[i] = (key, value)
+                return
+        slot.append((key, value))
+
+    def get(self, key):
+        hash_value = self._hash_function(key)
+        slot = self.table[hash_value]
+        for k, v in slot:
+            if k == key:
+                return v
+        return None
+
+    def delete(self, key):
+        hash_value = self._hash_function(key)
+        slot = self.table[hash_value]
+        for i, (k, v) in enumerate(slot):
+            if k == key:
+                del slot[i]
+                return
+
+    def __str__(self):
+        res = []
+        for i, slot in enumerate(self.table):
+            for k, v in slot:
+                res.append(f"{k}: {v}")
+        return "{" + ", ".join(res) + "}"
