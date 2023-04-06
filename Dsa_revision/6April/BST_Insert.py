@@ -6,3 +6,4 @@ def insert(root, val):
     elif val < root.val:
         root.left = insert(root.left, val)
     return root
+
