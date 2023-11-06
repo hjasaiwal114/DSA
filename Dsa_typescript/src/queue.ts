@@ -1,4 +1,4 @@
-type QNode<T> = {
+type Node<T> = {
     value: T,
     next?: Node<T>,
 }
@@ -38,7 +38,7 @@ export default class Queue<T> {
         return head.value;
 
     }
-    peek() : T | undeined {
+    peek() : T | undefined {
         return this.head?.value;
     }
 }
